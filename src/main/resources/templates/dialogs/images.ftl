@@ -255,11 +255,13 @@
 
         var callFn = eval(${imageLocation});
 
+        $('#div-picture-manager').parent().modal('hide');
+
         if (callFn != null) {
             callFn($(this).parent().find('input').val(), $(this).find('img').attr('src'))
         }
 
-        $('#div-picture-manager').parent().modal('hide');
+
     });
 
     $('#button-picture-refresh').on('click', function (e) {

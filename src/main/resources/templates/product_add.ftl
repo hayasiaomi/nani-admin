@@ -133,14 +133,19 @@
                                                     <button class="btn btn-default" type="button"
                                                             onclick="uploadMultiImage(this);">选择图片
                                                     </button>
-                                                    <div class="input-group " style="margin-top:.5em;">
-                                                        <img src="/images/nopic.jpg"
-                                                             onerror="this.src='./resource/images/nopic.jpg'; this.title='图片未找到.'"
-                                                             class="img-responsive img-thumbnail" width="150"/>
-                                                        <em class="close"
-                                                            style="position:absolute; top: 0px; right: -14px;"
-                                                            title="删除这张图片" onclick="deleteMultiImage(this)">×</em>
+                                                    <div class="row" id="div-sub-images">
+                                                        <div class="col-sm-3 col-xs-3">
+                                                            <div class="input-group " style="margin-top:.5em;">
+                                                                <img src="/images/nopic.jpg"
+                                                                     onerror="this.src='./resource/images/nopic.jpg'; this.title='图片未找到.'"
+                                                                     class="img-responsive img-thumbnail" width="150"/>
+                                                                <em class="close"
+                                                                    style="position:absolute; top: 0px; right: -14px;"
+                                                                    title="删除这张图片" onclick="deleteMultiImage(this)">×</em>
+                                                            </div>
+                                                        </div>
                                                     </div>
+
                                                     <span class="help-block">建议尺寸: 640 * 640 ，或正方型图片 </span>
                                                 </div>
                                             </div>
@@ -322,43 +327,76 @@
 
             function deleteMultiImage(elm) {
 
+                $(elm).parent().parent().remove();
+
+                var childernLen =  $("#div-sub-images").children().length;
+
+                if(childernLen ==0)
+                {
+                    var html = '<div class="col-sm-3 col-xs-3"><div class="input-group " style="margin-top:.5em;">' +
+                        '<img src="/images/nopic.jpg"' +
+                        'onerror="this.src=\'/images/nopic.jpg\'; this.title=\'图片未找到.\'"' +
+                        'class="img-responsive img-thumbnail" width="150"/>' +
+                        '<em class="close"' +
+                        'style="position:absolute; top: 0px; right: -14px;"' +
+                        'title="删除这张图片" onclick="deleteImage(this)">×</em>' +
+                        '</div> </div>';
+
+                    $("#div-sub-images").append(html);
+                }
             }
-            
-            function subImageManagerCallback(imgName,imgUrl) {
+
+            function mainImageManagerCallback(imgName, imgUrl) {
                 var html = '<div class="input-group " style="margin-top:.5em;">' +
-                    '<img src="'+imgUrl+'"' +
-                    'onerror="this.src=\'./resource/images/nopic.jpg\'; this.title=\'图片未找到.\'"' +
+                    '<img src="' + imgUrl + '"' +
+                    'onerror="this.src=\'/images/nopic.jpg\'; this.title=\'图片未找到.\'"' +
                     'class="img-responsive img-thumbnail" width="150"/>' +
                     '<em class="close"' +
                     'style="position:absolute; top: 0px; right: -14px;"' +
-                    'title="删除这张图片" onclick="deleteImage(this)">×</em>' +
-                    '<input type="hidden" name="mainImageFile" value="'+imgUrl+'" />'+
+                    'title="删除这张图片" onclick="deleteMultiImage(this)">×</em>' +
+                    '<input type="hidden" name="mainImageFile" value="' + imgUrl + '" />' +
                     '</div>';
 
-                if(imgName!='' && imgName != null)
-                {
+                if (imgName != '' && imgName != null) {
                     $("#div-main-images").empty();
                     $("#div-main-images").append(html);
                 }
             }
-            
-            function mainImageManagerCallback(imgName,imgUrl) {
-                $("#div-main-images").has()
 
-                var html = '<div class="input-group " style="margin-top:.5em;">' +
-                    '<img src="'+imgUrl+'"' +
-                    'onerror="this.src=\'./resource/images/nopic.jpg\'; this.title=\'图片未找到.\'"' +
-                    'class="img-responsive img-thumbnail" width="150"/>' +
-                    '<em class="close"' +
-                    'style="position:absolute; top: 0px; right: -14px;"' +
-                    'title="删除这张图片" onclick="deleteImage(this)">×</em>' +
-                    '<input type="hidden" name="subImageFile" value="'+imgUrl+'" />'+
-                    '</div>';
+            function subImageManagerCallback(imgName, imgUrl) {
 
-                if(imgName!='' && imgName != null)
-                {
-                    $("#div-main-images").empty();
-                    $("#div-main-images").append(html);
+                var img = $("#div-sub-images").find("img[src='" + imgUrl + "']");
+
+                if (img == null || img.length <=0) {
+
+                    var childernLen =  $("#div-sub-images").children().length;
+
+                    if(childernLen == 1)
+                    {
+                        var noimg = $("#div-sub-images").find("img[src='/images/nopic.jpg']");
+
+                        if (noimg != null && noimg.length > 0)
+                        {
+                            $("#div-sub-images").empty();
+                        }
+                    }
+
+                    var html = '<div class="col-sm-3 col-xs-3"><div class="input-group " style="margin-top:.5em;">' +
+                        '<img src="' + imgUrl + '"' +
+                        'onerror="this.src=\'/images/nopic.jpg\'; this.title=\'图片未找到.\'"' +
+                        'class="img-responsive img-thumbnail" width="150"/>' +
+                        '<em class="close"' +
+                        'style="position:absolute; top: 0px; right: -14px;"' +
+                        'title="删除这张图片" onclick="deleteMultiImage(this)">×</em>' +
+                        '<input type="hidden" name="subImageFile" value="' + imgUrl + '" />' +
+                        '</div> </div>';
+
+                    $("#div-sub-images").append(html);
+
+                }
+
+
+
 
             }
         </script>
