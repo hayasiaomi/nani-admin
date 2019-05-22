@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aomi.nani.mapper.ProductMapper">
+
+    <sql id="sqlProductSpuByKeyword">
+        <where>
+            <if test="keyword != null ">
+                <bind name="pattern" value="'%' + keyword + '%'"/>
+                ProductName like #{pattern}
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectProductSpuCountByKeyword" resultType="java.lang.Integer" parameterType="com.aomi.nani.model.domain.ProductSpu">
+
+        SELECT Count(Id) FROM ProductSpu
+
+        <include refid="sqlProductSpuByKeyword"></include>
+
+    </select>
+
+    <select id="selectProductSpuByKeyword" resultType="com.aomi.nani.model.domain.ProductSpu" parameterType="com.aomi.nani.model.domain.ProductSpu">
+
+        SELECT * FROM ProductSpu
+
+        <include refid="sqlProductSpuByKeyword"></include>
+
+        LIMIT #{limit,jdbcType=INTEGER},#{skip,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectProductSkuByProductId" resultType="com.aomi.nani.model.domain.ProductSku"
+            parameterType="java.lang.Long">
+
+        SELECT * FROM ProductSku WHERE ProductId= #{ProductId,jdbcType=BIGINT}
+    </select>
+
+    <insert id="insertProductSku" useGeneratedKeys="true" parameterType="com.aomi.nani.model.domain.ProductSku"
+            keyProperty="id">
+     INSERT INTO `ProductSku`(`ProductId`,`SKUPropertyValueId`,`Price`,`SalePrice`,`CostPrice`,`StoreCount`,`Weight`,`IsOnLine`, `BarCode`)
+      VALUES (#{productId,jdbcType=BIGINT}, #{skuPropertyValueId,jdbcType=BIGINT},  #{price,jdbcType=DECIMAL},  #{salePrice,jdbcType=DECIMAL},  #{costPrice,jdbcType=DECIMAL}, #{storeCount,jdbcType=INTEGER}, #{weight,jdbcType=DOUBLE}, #{isOnLine,jdbcType=INTEGER}, #{barCode,jdbcType=VARCHAR});
+    </insert>
+
+
+    <insert id="insertProductSpu" useGeneratedKeys="true" parameterType="com.aomi.nani.model.domain.ProductSpu"
+            keyProperty="id">
+INSERT INTO
+`ProductSpu`
+(
+  `title`,
+  `productName`,
+  `productCode`,
+  `pictureUrl` ,
+  `description` ,
+  `productCategoryId`,
+  `stock`,
+  `warningStock`,
+  `unit`,
+  `productType`,
+  `sequence`,
+  `status`,
+  `lastUpdateTime`,
+  `createTime`)
+VALUES
+ (
+ #{title,jdbcType=VARCHAR},
+ #{productName,jdbcType=VARCHAR},
+ #{productCode,jdbcType=VARCHAR},
+ #{pictureUrl,jdbcType=VARCHAR},
+ #{description,jdbcType=VARCHAR},
+ #{productCategoryId,jdbcType=BIGINT},
+ #{stock,jdbcType=INTEGER},
+ #{warningStock,jdbcType=INTEGER},
+ #{unit,jdbcType=VARCHAR},
+ #{productType,jdbcType=INTEGER},
+ #{sequence,jdbcType=INTEGER},
+ #{status,jdbcType=INTEGER},
+ #{lastUpdateTime,jdbcType=TIMESTAMP},
+ #{createTime,jdbcType=TIMESTAMP}
+);
+    </insert>
+</mapper>

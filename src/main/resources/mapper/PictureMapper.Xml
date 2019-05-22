@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aomi.nani.mapper.PictureMapper">
+
+
+    <sql id="sqlFolderByLimitAndSkip">
+        <where>
+            <if test="keyword != null ">
+                <bind name="pattern" value="'%' + keyword + '%'"/>
+                dirName LIKE #{pattern}
+            </if>
+            <if test="pictureTypeId != null and pictureTypeId != -1 ">
+                AND pictureTypeId = #{pictureTypeId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectPictureCountByLimitAndSkip" resultType="java.lang.Integer">
+
+        SELECT Count(Id) FROM Nani_Picture
+
+        <include refid="sqlFolderByLimitAndSkip"/>
+
+    </select>
+
+    <select id="selectPictureByLimitAndSkip" resultType="com.aomi.nani.model.domain.Picture">
+
+        SELECT * FROM Nani_Picture
+
+        <include refid="sqlFolderByLimitAndSkip"/>
+
+        LIMIT #{limit,jdbcType=INTEGER},#{skip,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectPictureTypes" resultType="com.aomi.nani.model.domain.PictureType">
+        SELECT * FROM Nani_Picture_Type
+    </select>
+
+    <insert id="insertPictureType" parameterType="java.lang.String">
+     INSERT INTO `Nani_Picture_Type`(`TypeName`)
+      VALUES (#{TypeName,jdbcType=VARCHAR});
+    </insert>
+
+    <insert id="insertPicture" useGeneratedKeys="true" parameterType="com.aomi.nani.model.domain.Picture"
+            keyProperty="id">
+     INSERT INTO `Nani_Picture`(`DirName`,`PictureTypeId`,`Url`,`LastUpdateTime`,`CreateTime`)
+      VALUES (#{dirName,jdbcType=VARCHAR}, #{pictureTypeId,jdbcType=BIGINT},  #{url,jdbcType=VARCHAR},  #{lastUpdateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP});
+    </insert>
+
+</mapper>

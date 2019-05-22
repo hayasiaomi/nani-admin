@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aomi.nani.mapper.AccountMapper">
+    <select id="SelectAccountByUsernameAndPassword" resultType="com.aomi.nani.model.domain.Account">
+        SELECT * FROM Account WHERE username=#{UserName,jdbcType=VARCHAR} AND password=#{Password,jdbcType=VARCHAR}
+    </select>
+</mapper>

@@ -1,0 +1,879 @@
+2019-05-22 09:15:17.629  INFO 13388 --- [main] com.aomi.nani.NaniAdminApplication       : Starting NaniAdminApplication on DESKTOP-QFLJGHK with PID 13388 (D:\developer\Nani\admin\target\classes started by MI in D:\developer\Nani\admin)
+2019-05-22 09:15:17.633  INFO 13388 --- [main] com.aomi.nani.NaniAdminApplication       : No active profile set, falling back to default profiles: default
+2019-05-22 09:15:18.793  INFO 13388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-05-22 09:15:18.808  INFO 13388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-22 09:15:18.808  INFO 13388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-22 09:15:18.928  INFO 13388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-22 09:15:18.928  INFO 13388 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1216 ms
+2019-05-22 09:15:19.351  INFO 13388 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-22 09:15:19.624  INFO 13388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-05-22 09:15:19.626  INFO 13388 --- [main] com.aomi.nani.NaniAdminApplication       : Started NaniAdminApplication in 2.416 seconds (JVM running for 3.551)
+2019-05-22 09:15:37.903  INFO 13388 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-22 09:15:37.903  INFO 13388 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-22 09:15:37.907  INFO 13388 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-05-22 09:15:40.228  INFO 13388 --- [http-nio-8090-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-22 09:15:40.345  INFO 13388 --- [http-nio-8090-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-22 09:15:40.350 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSpuByKeyword      : ==>  Preparing: SELECT * FROM ProductSpu LIMIT ?,? 
+2019-05-22 09:15:40.366 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSpuByKeyword      : ==> Parameters: 0(Integer), 2(Integer)
+2019-05-22 09:15:40.442 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSpuByKeyword      : <==      Total: 2
+2019-05-22 09:15:40.444 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSkuByProductId    : ==>  Preparing: SELECT * FROM ProductSku WHERE ProductId= ? 
+2019-05-22 09:15:40.445 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSkuByProductId    : ==> Parameters: 1(Long)
+2019-05-22 09:15:40.446 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSkuByProductId    : <==      Total: 1
+2019-05-22 09:15:40.447 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSkuByProductId    : ==>  Preparing: SELECT * FROM ProductSku WHERE ProductId= ? 
+2019-05-22 09:15:40.448 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSkuByProductId    : ==> Parameters: 6(Long)
+2019-05-22 09:15:40.450 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSkuByProductId    : <==      Total: 1
+2019-05-22 09:15:40.451 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSpuCountByKeyword : ==>  Preparing: SELECT Count(Id) FROM ProductSpu 
+2019-05-22 09:15:40.451 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSpuCountByKeyword : ==> Parameters: 
+2019-05-22 09:15:40.454 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectProductSpuCountByKeyword : <==      Total: 1
+2019-05-22 09:15:45.048 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:15:45.049 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:15:45.052 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:15:45.054 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:15:45.054 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:15:45.054 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:15:45.055 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:15:45.055 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:15:45.055 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:15:48.986 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:15:48.986 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:15:48.988 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:15:48.989 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:15:48.989 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:15:48.990 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:15:48.990 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:15:48.990 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:15:48.991 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:15:50.081 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:15:50.081 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:15:50.084 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:15:50.085 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:15:50.085 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:15:50.086 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:15:50.086 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:15:50.086 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:15:50.087 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:15:54.487 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:15:54.488 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 2(Long), 0(Integer), 8(Integer)
+2019-05-22 09:15:54.490 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 1
+2019-05-22 09:15:54.491 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:15:54.492 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 2(Long)
+2019-05-22 09:15:54.493 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:15:54.494 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:15:54.494 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:15:54.496 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:15:55.151 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:15:55.152 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 1(Long), 0(Integer), 8(Integer)
+2019-05-22 09:15:55.154 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:15:55.155 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:15:55.156 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 1(Long)
+2019-05-22 09:15:55.157 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:15:55.157 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:15:55.157 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:15:55.159 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:15:55.648 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:15:55.648 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:15:55.650 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:15:55.651 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:15:55.651 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:15:55.652 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:15:55.652 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:15:55.652 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:15:55.653 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:24:32.339 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:24:32.339 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:24:32.341 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:24:32.342 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:24:32.342 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:24:32.343 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:24:32.343 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:24:32.343 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:24:32.344 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:24:37.628 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:24:37.629 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:24:37.631 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:24:37.632 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:24:37.632 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:24:37.633 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:24:37.633 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:24:37.634 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:24:37.634 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:25:46.375 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:25:46.375 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:25:46.376 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:25:46.377 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:25:46.377 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:25:46.378 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:25:46.379 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:25:46.379 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:25:46.380 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:25:49.608 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:25:49.609 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:25:49.610 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:25:49.611 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:25:49.611 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:25:49.612 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:25:49.612 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:25:49.612 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:25:49.613 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:29:00.088 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:29:00.089 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:29:00.091 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:29:00.091 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:29:00.091 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:29:00.092 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:29:00.092 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:29:00.092 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:29:00.093 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:29:03.968 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:29:03.968 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:29:03.969 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:29:03.970 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:29:03.970 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:29:03.971 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:29:03.971 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:29:03.971 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:29:03.972 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:30:26.583 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:30:26.584 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:30:26.585 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:30:26.586 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:30:26.586 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:30:26.587 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:30:26.587 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:30:26.587 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:30:26.588 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:30:30.177 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:30:30.177 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:30:30.178 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:30:30.179 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:30:30.179 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:30:30.180 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:30:30.180 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:30:30.180 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:30:30.180 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:33:24.039 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:33:24.039 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:33:24.041 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:33:24.041 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:33:24.042 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:33:24.043 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:33:24.043 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:33:24.043 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:33:24.048 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:33:46.553 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:33:46.553 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:33:46.554 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:33:46.555 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:33:46.555 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:33:46.556 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:33:46.556 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:33:46.556 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:33:46.557 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:33:55.177 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:33:55.177 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:33:55.178 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:33:55.179 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:33:55.179 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:33:55.179 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:33:55.180 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:33:55.180 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:33:55.181 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:33:56.192 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:33:56.192 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:33:56.193 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:33:56.194 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:33:56.194 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:33:56.195 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:33:56.195 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:33:56.195 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:33:56.196 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:33:58.197 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:33:58.198 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:33:58.199 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:33:58.199 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:33:58.200 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:33:58.200 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:33:58.201 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:33:58.201 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:33:58.201 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:34:01.390 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:34:01.390 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:34:01.391 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:34:01.392 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:34:01.392 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:34:01.393 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:34:01.393 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:34:01.393 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:34:01.394 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:17.623 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:17.623 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:35:17.625 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:35:17.625 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:17.625 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:17.626 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:17.627 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:17.627 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:17.628 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:20.808 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:20.808 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:35:20.809 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:35:20.810 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:20.810 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:20.810 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:20.811 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:20.811 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:20.812 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:22.208 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:22.208 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:35:22.209 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:35:22.210 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:22.210 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:22.210 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:22.211 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:22.211 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:22.211 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:23.310 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:23.310 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:35:23.311 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:35:23.311 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:23.312 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:23.312 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:23.312 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:23.313 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:23.313 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:25.087 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:25.088 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:35:25.089 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:35:25.089 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:25.089 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:25.090 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:25.090 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:25.090 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:25.091 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:26.008 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:26.008 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:35:26.009 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:35:26.009 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:26.009 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:26.010 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:26.010 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:26.010 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:26.011 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:35:26.917 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:35:26.917 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:35:26.918 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:35:26.919 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:35:26.919 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:35:26.919 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:35:26.920 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:35:26.920 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:35:26.920 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:36:43.304 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:36:43.305 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:36:43.306 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:36:43.306 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:36:43.307 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:36:43.307 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:36:43.308 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:36:43.308 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:36:43.308 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:39:03.217 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:39:03.218 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:39:03.219 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:39:03.219 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:39:03.219 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:39:03.220 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:39:03.221 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:39:03.221 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:39:03.222 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:39:08.927 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:39:08.928 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:39:08.928 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:39:08.929 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:39:08.929 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:39:08.930 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:39:08.930 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:39:08.930 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:39:08.931 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:39:13.022 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:39:13.022 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:39:13.023 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:39:13.023 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:39:13.024 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:39:13.024 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:39:13.024 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:39:13.024 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:39:13.025 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:40:04.230 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:40:04.230 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:40:04.231 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:40:04.232 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:40:04.232 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:40:04.233 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:40:04.233 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:40:04.233 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:40:04.234 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:43:31.698 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:43:31.698 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:43:31.699 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:43:31.700 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:43:31.700 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:43:31.701 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:43:31.701 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:43:31.701 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:43:31.702 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:44:48.847 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:44:48.848 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:44:48.849 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:44:48.849 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:44:48.849 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:44:48.850 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:44:48.851 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:44:48.851 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:44:48.851 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:44:55.536 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:44:55.536 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:44:55.537 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:44:55.538 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:44:55.538 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:44:55.539 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:44:55.539 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:44:55.539 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:44:55.540 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:44:57.056 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:44:57.056 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:44:57.057 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:44:57.058 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:44:57.058 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:44:57.058 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:44:57.059 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:44:57.059 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:44:57.059 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:44:58.334 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:44:58.334 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:44:58.335 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:44:58.335 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:44:58.335 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:44:58.336 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:44:58.336 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:44:58.336 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:44:58.337 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:46:51.681 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:46:51.682 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:46:51.693 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:46:51.693 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:46:51.693 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:46:51.694 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:46:51.694 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:46:51.694 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:46:51.695 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:47:55.187 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:47:55.188 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:47:55.201 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:47:55.201 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:47:55.201 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:47:55.202 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:47:55.202 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:47:55.202 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:47:55.203 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:04.927 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:48:04.927 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:48:04.942 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:48:04.943 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:48:04.943 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:48:04.944 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:04.944 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:04.944 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:04.945 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:16.503 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:48:16.503 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:48:16.504 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:48:16.505 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:48:16.505 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:48:16.505 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:16.506 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:16.506 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:16.506 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:18.199 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:48:18.200 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:48:18.201 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:48:18.201 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:48:18.201 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:48:18.202 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:18.202 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:18.202 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:18.203 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:47.782 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:48:47.782 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 3(Long), 0(Integer), 8(Integer)
+2019-05-22 09:48:47.798 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:48:47.799 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:48:47.799 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 3(Long)
+2019-05-22 09:48:47.799 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:47.800 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:47.800 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:47.800 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:48.702 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:48:48.702 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 2(Long), 0(Integer), 8(Integer)
+2019-05-22 09:48:48.703 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 1
+2019-05-22 09:48:48.703 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:48:48.703 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 2(Long)
+2019-05-22 09:48:48.704 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:48.705 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:48.705 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:48.705 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:49.320 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:48:49.320 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 1(Long), 0(Integer), 8(Integer)
+2019-05-22 09:48:49.321 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:48:49.321 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:48:49.322 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 1(Long)
+2019-05-22 09:48:49.322 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:49.322 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:49.323 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:49.323 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:48:49.880 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:48:49.881 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:48:49.882 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:48:49.882 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:48:49.882 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:48:49.883 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:48:49.883 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:48:49.883 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:48:49.884 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:49:29.799 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:49:29.799 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:49:29.808 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:49:29.809 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:49:29.809 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:49:29.809 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:49:29.809 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:49:29.809 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:49:29.810 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:07.000 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:07.000 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:07.004 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:07.005 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:07.005 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:07.005 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:07.006 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:07.006 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:07.006 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:30.966 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:30.967 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:30.968 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:30.968 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:30.968 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:30.969 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:30.969 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:30.969 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:30.970 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:33.007 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:33.007 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 2(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:33.025 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 1
+2019-05-22 09:50:33.026 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:33.026 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 2(Long)
+2019-05-22 09:50:33.026 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:33.027 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:33.027 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:33.028 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:33.622 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:33.622 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 1(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:33.623 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:33.623 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:33.624 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 1(Long)
+2019-05-22 09:50:33.624 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:33.625 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:33.625 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:33.625 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:34.734 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:34.734 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:34.735 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:34.735 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:34.735 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:34.737 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:34.737 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:34.737 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:34.738 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:35.335 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:35.335 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 1(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:35.336 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:35.336 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:35.336 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 1(Long)
+2019-05-22 09:50:35.337 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:35.337 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:35.337 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:35.338 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:35.853 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:35.853 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 2(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:35.854 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 1
+2019-05-22 09:50:35.855 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:35.855 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 2(Long)
+2019-05-22 09:50:35.856 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:35.856 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:35.856 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:35.856 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:36.477 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:36.478 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 3(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:36.478 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:50:36.479 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:36.479 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 3(Long)
+2019-05-22 09:50:36.480 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:36.480 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:36.480 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:36.480 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:37.349 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:37.350 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 1(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:37.350 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:37.351 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:37.351 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 1(Long)
+2019-05-22 09:50:37.352 DEBUG 13388 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:37.352 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:37.352 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:37.352 DEBUG 13388 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:37.885 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:37.885 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:37.886 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:37.887 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:37.887 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:37.888 DEBUG 13388 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:37.888 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:37.888 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:37.888 DEBUG 13388 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:38.933 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:38.933 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:50:38.934 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:50:38.934 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:38.934 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:38.935 DEBUG 13388 --- [http-nio-8090-exec-4] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:38.935 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:38.935 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:38.935 DEBUG 13388 --- [http-nio-8090-exec-4] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:40.102 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:40.102 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:40.103 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:40.103 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:40.103 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:40.104 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:40.104 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:40.104 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:40.105 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:42.109 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:42.109 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 1(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:42.110 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:42.111 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:42.111 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 1(Long)
+2019-05-22 09:50:42.112 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:42.112 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:42.113 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:42.113 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:44.046 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:44.046 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 2(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:44.047 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 1
+2019-05-22 09:50:44.047 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:44.047 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 2(Long)
+2019-05-22 09:50:44.048 DEBUG 13388 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:44.048 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:44.048 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:44.049 DEBUG 13388 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:45.245 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? LIMIT ?,? 
+2019-05-22 09:50:45.246 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 3(Long), 0(Integer), 8(Integer)
+2019-05-22 09:50:45.246 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:50:45.247 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? AND pictureTypeId = ? 
+2019-05-22 09:50:45.247 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String), 3(Long)
+2019-05-22 09:50:45.247 DEBUG 13388 --- [http-nio-8090-exec-6] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:45.248 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:45.248 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:45.248 DEBUG 13388 --- [http-nio-8090-exec-6] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:46.158 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:46.158 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:46.159 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:46.159 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:46.160 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:46.160 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:46.160 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:46.160 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:46.161 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:47.613 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:47.614 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 8(Integer), 8(Integer)
+2019-05-22 09:50:47.614 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 4
+2019-05-22 09:50:47.615 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:47.615 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:47.616 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:47.616 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:47.616 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:47.616 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:50:48.733 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:50:48.734 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:50:48.734 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:50:48.734 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:50:48.735 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:50:48.735 DEBUG 13388 --- [http-nio-8090-exec-3] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:50:48.735 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:50:48.735 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:50:48.735 DEBUG 13388 --- [http-nio-8090-exec-3] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:55:02.873 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:55:02.873 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:55:02.880 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:55:02.881 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:55:02.881 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:55:02.881 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:55:02.882 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:55:02.882 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:55:02.882 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:55:10.798 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:55:10.798 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %undefined%(String), 0(Integer), 8(Integer)
+2019-05-22 09:55:10.799 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:55:10.799 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:55:10.799 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %undefined%(String)
+2019-05-22 09:55:10.800 DEBUG 13388 --- [http-nio-8090-exec-1] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:55:10.800 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:55:10.801 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:55:10.801 DEBUG 13388 --- [http-nio-8090-exec-1] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:55:54.839 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:55:54.839 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:55:54.840 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:55:54.840 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:55:54.840 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:55:54.841 DEBUG 13388 --- [http-nio-8090-exec-10] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:55:54.841 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:55:54.842 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:55:54.842 DEBUG 13388 --- [http-nio-8090-exec-10] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:55:54.890 ERROR 13388 --- [http-nio-8090-exec-10] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> keyword  [in template "dialogs/images.ftl" at line 26, column 93]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${keyword}  [in template "dialogs/images.ftl" at line 26, column 91]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:467) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:389) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:358) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.Environment.visit(Environment.java:330) [freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.Environment.visit(Environment.java:336) [freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.Environment.process(Environment.java:309) [freemarker-2.3.28.jar:2.3.28]
+	at freemarker.template.Template.process(Template.java:384) [freemarker-2.3.28.jar:2.3.28]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:389) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:302) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:253) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:178) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2019-05-22 09:55:54.893 ERROR 13388 --- [http-nio-8090-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> keyword  [in template "dialogs/images.ftl" at line 26, column 93]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${keyword}  [in template "dialogs/images.ftl" at line 26, column 91]
+----] with root cause
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> keyword  [in template "dialogs/images.ftl" at line 26, column 93]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${keyword}  [in template "dialogs/images.ftl" at line 26, column 91]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:467) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:389) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:358) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:100) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.Environment.visit(Environment.java:330) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.Environment.visit(Environment.java:336) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.core.Environment.process(Environment.java:309) ~[freemarker-2.3.28.jar:2.3.28]
+	at freemarker.template.Template.process(Template.java:384) ~[freemarker-2.3.28.jar:2.3.28]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:389) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:302) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:253) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:178) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2019-05-22 09:55:54.899 ERROR 13388 --- [http-nio-8090-exec-10] s.e.ErrorMvcAutoConfiguration$StaticView : Cannot render error page for request [/dialog/images] and exception [The following has evaluated to null or missing:
+==> keyword  [in template "dialogs/images.ftl" at line 26, column 93]
+
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${keyword}  [in template "dialogs/images.ftl" at line 26, column 91]
+----] as the response has already been committed. As a result, the response may have the wrong status code.
+2019-05-22 09:56:17.279 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:56:17.279 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:56:17.280 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:56:17.280 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:56:17.280 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:56:17.281 DEBUG 13388 --- [http-nio-8090-exec-5] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:56:17.281 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:56:17.281 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:56:17.282 DEBUG 13388 --- [http-nio-8090-exec-5] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:56:24.582 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:56:24.583 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %undefined%(String), 0(Integer), 8(Integer)
+2019-05-22 09:56:24.583 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:56:24.584 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:56:24.584 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %undefined%(String)
+2019-05-22 09:56:24.584 DEBUG 13388 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:56:24.584 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:56:24.585 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:56:24.585 DEBUG 13388 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:57:02.411  INFO 9968 --- [main] com.aomi.nani.NaniAdminApplication       : Starting NaniAdminApplication on DESKTOP-QFLJGHK with PID 9968 (D:\developer\Nani\admin\target\classes started by MI in D:\developer\Nani\admin)
+2019-05-22 09:57:02.414  INFO 9968 --- [main] com.aomi.nani.NaniAdminApplication       : No active profile set, falling back to default profiles: default
+2019-05-22 09:57:03.279  INFO 9968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-05-22 09:57:03.293  INFO 9968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-22 09:57:03.294  INFO 9968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-22 09:57:03.371  INFO 9968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-22 09:57:03.371  INFO 9968 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 919 ms
+2019-05-22 09:57:03.688  INFO 9968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-22 09:57:03.866  INFO 9968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-05-22 09:57:03.868  INFO 9968 --- [main] com.aomi.nani.NaniAdminApplication       : Started NaniAdminApplication in 1.728 seconds (JVM running for 2.338)
+2019-05-22 09:57:16.574  INFO 9968 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-22 09:57:16.575  INFO 9968 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-22 09:57:16.578  INFO 9968 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-05-22 09:57:18.073  INFO 9968 --- [http-nio-8090-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-22 09:57:18.240  INFO 9968 --- [http-nio-8090-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-22 09:57:18.245 DEBUG 9968 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:57:18.269 DEBUG 9968 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:57:18.286 DEBUG 9968 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:57:18.288 DEBUG 9968 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:57:18.288 DEBUG 9968 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:57:18.290 DEBUG 9968 --- [http-nio-8090-exec-2] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:57:18.291 DEBUG 9968 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:57:18.291 DEBUG 9968 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:57:18.292 DEBUG 9968 --- [http-nio-8090-exec-2] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:57:25.434 DEBUG 9968 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:57:25.434 DEBUG 9968 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %undefined%(String), 0(Integer), 8(Integer)
+2019-05-22 09:57:25.435 DEBUG 9968 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:57:25.436 DEBUG 9968 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:57:25.436 DEBUG 9968 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %undefined%(String)
+2019-05-22 09:57:25.437 DEBUG 9968 --- [http-nio-8090-exec-7] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:57:25.438 DEBUG 9968 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:57:25.438 DEBUG 9968 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:57:25.439 DEBUG 9968 --- [http-nio-8090-exec-7] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:58:24.682 DEBUG 9968 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:58:24.682 DEBUG 9968 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %%(String), 0(Integer), 8(Integer)
+2019-05-22 09:58:24.685 DEBUG 9968 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 8
+2019-05-22 09:58:24.686 DEBUG 9968 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:58:24.686 DEBUG 9968 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %%(String)
+2019-05-22 09:58:24.687 DEBUG 9968 --- [http-nio-8090-exec-9] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:58:24.687 DEBUG 9968 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:58:24.688 DEBUG 9968 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:58:24.688 DEBUG 9968 --- [http-nio-8090-exec-9] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
+2019-05-22 09:58:28.310 DEBUG 9968 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==>  Preparing: SELECT * FROM Nani_Picture WHERE dirName LIKE ? LIMIT ?,? 
+2019-05-22 09:58:28.311 DEBUG 9968 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : ==> Parameters: %undefined%(String), 0(Integer), 8(Integer)
+2019-05-22 09:58:28.311 DEBUG 9968 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureByLimitAndSkip    : <==      Total: 0
+2019-05-22 09:58:28.312 DEBUG 9968 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==>  Preparing: SELECT Count(Id) FROM Nani_Picture WHERE dirName LIKE ? 
+2019-05-22 09:58:28.312 DEBUG 9968 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : ==> Parameters: %undefined%(String)
+2019-05-22 09:58:28.312 DEBUG 9968 --- [http-nio-8090-exec-8] a.n.m.P.selectPictureCountByLimitAndSkip : <==      Total: 1
+2019-05-22 09:58:28.313 DEBUG 9968 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==>  Preparing: SELECT * FROM Nani_Picture_Type 
+2019-05-22 09:58:28.313 DEBUG 9968 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : ==> Parameters: 
+2019-05-22 09:58:28.314 DEBUG 9968 --- [http-nio-8090-exec-8] c.a.n.m.P.selectPictureTypes             : <==      Total: 3
