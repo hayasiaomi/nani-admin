@@ -1,5 +1,5 @@
 <#compress>
-    <#include "components/_start.ftl">
+    <#include "../components/_start.ftl">
     <!DOCTYPE html>
     <html lang="zh">
     <@head>
@@ -46,7 +46,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <form action="/product/addProduct" method="post" class="form-horizontal" role="form">
+                            <form action="/product/add" method="post" class="form-horizontal" role="form">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a href="#home" data-toggle="tab">基本信息</a>
@@ -75,17 +75,21 @@
                                                 <div class="col-sm-10">
                                                     <div class="row row-fix">
                                                         <div class="col-sm-4">
-                                                            <select class="form-control">
-                                                                <option>第一级分类</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
+                                                            <select id="select-first-category"
+                                                                    class="form-control selectpicker" onchange="changeFirstCategory(this)">
+                                                                <option value="-1">第一级分类</option>
+                                                                <#if productCategoryVos??&&(productCategoryVos?size > 0)>
+                                                                    <#list productCategoryVos as  firstPCV >
+                                                                        <option value="${firstPCV.id}"> ${firstPCV.categoryName}</option>
+                                                                    </#list>
+                                                                </#if>
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-4">
-                                                            <select class="form-control">
-                                                                <option>第二级分类</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
+                                                            <select id="select-second-category"
+                                                                    class="form-control selectpicker">
+                                                                <option value="-1">第二级分类</option>
+
                                                             </select>
                                                         </div>
                                                     </div>
@@ -141,7 +145,8 @@
                                                                      class="img-responsive img-thumbnail" width="150"/>
                                                                 <em class="close"
                                                                     style="position:absolute; top: 0px; right: -14px;"
-                                                                    title="删除这张图片" onclick="deleteMultiImage(this)">×</em>
+                                                                    title="删除这张图片"
+                                                                    onclick="deleteMultiImage(this)">×</em>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -257,6 +262,39 @@
         <script src="/plugins/fileinput/js/fileinput.js" type="text/javascript"></script>
         <script src="/plugins/fileinput/locales/zh.js" type="text/javascript"></script>
         <script type="text/javascript">
+
+            function changeFirstCategory(elm) {
+                // 选中性别
+                var parentId = $(elm).val();
+
+                $("#select-second-category").find("option:not(:first)").remove();
+
+                $.ajax({
+                    url: "/category/children?parentId=" + parentId,
+                    async: false,
+                    cache: false,
+                    type: 'get',
+                    success: function (data) {
+
+                        if(data['code'] == 1)
+                        {
+                            if(data['result']!= null)
+                            {
+                                for (var i in data['result']) {
+
+                                    var keyName = data['result'][i]['categoryName'];
+                                    var keyValue = data['result'][i]['id'];
+
+                                    $("#select-second-category").append(new Option(keyValue, keyName));
+                                }
+                            }
+
+                        }
+
+                    }
+                })
+            }
+
             function showImageDialog(elm, opts, options) {
                 var $button = $(elm);
 
@@ -329,10 +367,9 @@
 
                 $(elm).parent().parent().remove();
 
-                var childernLen =  $("#div-sub-images").children().length;
+                var childernLen = $("#div-sub-images").children().length;
 
-                if(childernLen ==0)
-                {
+                if (childernLen == 0) {
                     var html = '<div class="col-sm-3 col-xs-3"><div class="input-group " style="margin-top:.5em;">' +
                         '<img src="/images/nopic.jpg"' +
                         'onerror="this.src=\'/images/nopic.jpg\'; this.title=\'图片未找到.\'"' +
@@ -367,16 +404,14 @@
 
                 var img = $("#div-sub-images").find("img[src='" + imgUrl + "']");
 
-                if (img == null || img.length <=0) {
+                if (img == null || img.length <= 0) {
 
-                    var childernLen =  $("#div-sub-images").children().length;
+                    var childernLen = $("#div-sub-images").children().length;
 
-                    if(childernLen == 1)
-                    {
+                    if (childernLen == 1) {
                         var noimg = $("#div-sub-images").find("img[src='/images/nopic.jpg']");
 
-                        if (noimg != null && noimg.length > 0)
-                        {
+                        if (noimg != null && noimg.length > 0) {
                             $("#div-sub-images").empty();
                         }
                     }
@@ -394,8 +429,6 @@
                     $("#div-sub-images").append(html);
 
                 }
-
-
 
 
             }

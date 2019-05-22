@@ -40,9 +40,9 @@ public class ProductService {
                 productVo.setStatus(spu.getStatus());
                 productVo.setPictureUrl(spu.getPictureUrl());
                 productVo.setTitle(spu.getTitle());
-                productVo.setStock(spu.getStock());
-                productVo.setWarningStock(spu.getWarningStock());
                 productVo.setPrice(productSku.getPrice());
+                productVo.setStoreCount(productSku.getStoreCount());
+                productVo.setStoreLimitCount(productSku.getStoreLimitCount());
                 productVo.setSalePrice(productSku.getSalePrice());
 
                 productVos.add(productVo);
@@ -70,8 +70,6 @@ public class ProductService {
         productSpu.setStatus(0);
         productSpu.setUnit(productVo.getUnit());
         productSpu.setProductType(1);
-        productSpu.setWarningStock(productVo.getWarningStock());
-        productSpu.setStock(productVo.getStock());
         productSpu.setProductCode(productVo.getProductCode());
 
         productSpu.setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
@@ -84,7 +82,8 @@ public class ProductService {
         productSku.setPrice(productVo.getPrice());
         productSku.setProductId(productSpu.getId());
         productSku.setSalePrice(productVo.getSalePrice());
-        productSku.setStoreCount(productVo.getStock());
+        productSku.setStoreCount(productVo.getStoreCount());
+        productSku.setStoreLimitCount(productVo.getStoreLimitCount());
         productSku.setBarCode(productVo.getBarCode());
         productSku.setWeight(0d);
 

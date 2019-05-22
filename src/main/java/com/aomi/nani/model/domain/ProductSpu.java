@@ -13,9 +13,7 @@ public class ProductSpu {
     private String pictureUrl;
     private Long productCategoryId;
     private String description;
-    private Integer stock;
-    private Integer warningStock;
-    private int  productType;
+    private int productType;
     private String unit;
     private int sequence;
     private Integer status;

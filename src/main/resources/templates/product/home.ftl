@@ -1,5 +1,5 @@
 <#compress>
-    <#include "components/_start.ftl">
+    <#include "../components/_start.ftl">
     <!DOCTYPE html>
     <html lang="zh">
     <@head>
@@ -23,12 +23,12 @@
     </@head>
     <body>
     <div id="wrapper">
-        <@topbar mapcode="m002"></@topbar>
+        <@topbar mapcode="m002-01"></@topbar>
         <div id="page-wrapper">
 
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">商品管理</h3>
+                    商品管理
                 </div>
 
 
@@ -54,7 +54,7 @@
                                 <th>库存数量</th>
                                 <th>价格</th>
                                 <th>状态</th>
-                                <th>操作 <a class="btn btn-success btn-xs" href="/product/add">增加</a></th>
+                                <th>操作 <a class="btn btn-success btn-xs" href="/product/addProduct">增加</a></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -66,7 +66,7 @@
                                         <td>${ productVo.productName!"" }</td>
                                         <td>${ productVo.pictureUrl!"" }</td>
                                         <td></td>
-                                        <td>${ productVo.stock }</td>
+                                        <td>${ productVo.storeCount }</td>
                                         <td>${ productVo.salePrice}</td>
                                         <td>${productVo.status}</td>
                                         <td>

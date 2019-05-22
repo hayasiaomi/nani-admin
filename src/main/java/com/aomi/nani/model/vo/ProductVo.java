@@ -10,8 +10,8 @@ public class ProductVo {
     private String productCode;
     private String pictureUrl;
     private String description;
-    private Integer stock;
-    private Integer warningStock;
+    private Integer storeCount;
+    private Integer storeLimitCount;
     private String unit;
     private Double price;
     private Double salePrice;

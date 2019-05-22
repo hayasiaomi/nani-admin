@@ -11,17 +11,19 @@
         </where>
     </sql>
 
-    <select id="selectProductSpuCountByKeyword" resultType="java.lang.Integer" parameterType="com.aomi.nani.model.domain.ProductSpu">
+    <select id="selectProductSpuCountByKeyword" resultType="java.lang.Integer"
+            parameterType="com.aomi.nani.model.domain.ProductSpu">
 
-        SELECT Count(Id) FROM ProductSpu
+        SELECT Count(Id) FROM Nani_Product_Spu
 
         <include refid="sqlProductSpuByKeyword"></include>
 
     </select>
 
-    <select id="selectProductSpuByKeyword" resultType="com.aomi.nani.model.domain.ProductSpu" parameterType="com.aomi.nani.model.domain.ProductSpu">
+    <select id="selectProductSpuByKeyword" resultType="com.aomi.nani.model.domain.ProductSpu"
+            parameterType="com.aomi.nani.model.domain.ProductSpu">
 
-        SELECT * FROM ProductSpu
+        SELECT * FROM Nani_Product_Spu
 
         <include refid="sqlProductSpuByKeyword"></include>
 
@@ -31,29 +33,26 @@
     <select id="selectProductSkuByProductId" resultType="com.aomi.nani.model.domain.ProductSku"
             parameterType="java.lang.Long">
 
-        SELECT * FROM ProductSku WHERE ProductId= #{ProductId,jdbcType=BIGINT}
+        SELECT * FROM Nani_Product_Sku WHERE ProductId= #{ProductId,jdbcType=BIGINT}
     </select>
 
     <insert id="insertProductSku" useGeneratedKeys="true" parameterType="com.aomi.nani.model.domain.ProductSku"
             keyProperty="id">
-     INSERT INTO `ProductSku`(`ProductId`,`SKUPropertyValueId`,`Price`,`SalePrice`,`CostPrice`,`StoreCount`,`Weight`,`IsOnLine`, `BarCode`)
-      VALUES (#{productId,jdbcType=BIGINT}, #{skuPropertyValueId,jdbcType=BIGINT},  #{price,jdbcType=DECIMAL},  #{salePrice,jdbcType=DECIMAL},  #{costPrice,jdbcType=DECIMAL}, #{storeCount,jdbcType=INTEGER}, #{weight,jdbcType=DOUBLE}, #{isOnLine,jdbcType=INTEGER}, #{barCode,jdbcType=VARCHAR});
+     INSERT INTO `Nani_Product_Sku`(`ProductId`,`SKUPropertyValueId`,`Price`,`SalePrice`,`CostPrice`,`StoreCount`,`StoreLimitCount`,`Weight`,`IsOnLine`, `BarCode`)
+      VALUES (#{productId,jdbcType=BIGINT}, #{skuPropertyValueId,jdbcType=BIGINT},  #{price,jdbcType=DECIMAL},  #{salePrice,jdbcType=DECIMAL},  #{costPrice,jdbcType=DECIMAL}, #{storeCount,jdbcType=INTEGER}, #{storeLimitCount,jdbcType=INTEGER}, #{weight,jdbcType=DOUBLE}, #{isOnLine,jdbcType=INTEGER}, #{barCode,jdbcType=VARCHAR});
     </insert>
 
 
     <insert id="insertProductSpu" useGeneratedKeys="true" parameterType="com.aomi.nani.model.domain.ProductSpu"
             keyProperty="id">
 INSERT INTO
-`ProductSpu`
-(
+`Nani_Product_Spu` (
   `title`,
   `productName`,
   `productCode`,
   `pictureUrl` ,
   `description` ,
   `productCategoryId`,
-  `stock`,
-  `warningStock`,
   `unit`,
   `productType`,
   `sequence`,
@@ -68,8 +67,6 @@ VALUES
  #{pictureUrl,jdbcType=VARCHAR},
  #{description,jdbcType=VARCHAR},
  #{productCategoryId,jdbcType=BIGINT},
- #{stock,jdbcType=INTEGER},
- #{warningStock,jdbcType=INTEGER},
  #{unit,jdbcType=VARCHAR},
  #{productType,jdbcType=INTEGER},
  #{sequence,jdbcType=INTEGER},

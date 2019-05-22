@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aomi.nani.mapper.ProductCategoryMapper">
+    <select id="selectProductCategories" resultType="com.aomi.nani.model.domain.ProductCategory">
+        SELECT * FROM Nani_Product_Category WHERE IsDelete=0
+    </select>
+    <select id="selectFirstProductCategoriesByParentId" resultType="com.aomi.nani.model.domain.ProductCategory" parameterType="java.lang.Long">
+         SELECT * FROM Nani_Product_Category WHERE ParentId = #{parentId,jdbcType=BIGINT} AND IsDelete=0
+    </select>
+
+    <select id="selectProductCategoryById" resultType="com.aomi.nani.model.domain.ProductCategory"
+            parameterType="java.lang.Long">
+        SELECT * FROM Nani_Product_Category WHERE id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <insert id="insertProductCategory" parameterType="com.aomi.nani.model.domain.ProductCategory">
+ INSERT INTO `Nani_Product_Category`(`CategoryName`,`Description`,`ParentId`)
+      VALUES (#{categoryName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},  #{parentId,jdbcType=BIGINT});
+    </insert>
+
+    <update id="updateProductCategory" parameterType="java.util.HashMap">
+        UPDATE  `Nani_Product_Category` SET CategoryName=#{categoryName,jdbcType=VARCHAR},Description=#{description,jdbcType=VARCHAR} WHERE  id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteProductCategory" parameterType="java.lang.Long">
+        UPDATE  `Nani_Product_Category` SET IsDelete = 1 WHERE  id = #{id,jdbcType=BIGINT}
+    </delete>
+</mapper>

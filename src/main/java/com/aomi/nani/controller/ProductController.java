@@ -1,7 +1,9 @@
 package com.aomi.nani.controller;
 
 import com.aomi.nani.model.vo.PagerVo;
+import com.aomi.nani.model.vo.ProductCategoryVo;
 import com.aomi.nani.model.vo.ProductVo;
+import com.aomi.nani.service.ProductCategorySevice;
 import com.aomi.nani.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
+    private ProductCategorySevice productCategorySevice;
+
+    @Autowired
     private ProductService productService;
 
     @GetMapping(value = {"", "/index"})
@@ -32,19 +37,26 @@ public class ProductController {
         model.addAttribute("pagerVo", pagerVo);
         model.addAttribute("keyword",keyword);
 
-        return "product";
+        return "product/home";
     }
 
-    @GetMapping("/add")
-    public String add() {
-        return "product_add";
+    @GetMapping("/addProduct")
+    public String addProduct(Model model) {
+
+        List<ProductCategoryVo> productCategoryVos =  this.productCategorySevice.findProductCategoriesByParentId(-1l);
+
+        model.addAttribute("productCategoryVos",productCategoryVos);
+
+        return "product/add";
     }
 
-    @PostMapping("/addProduct")
+    @PostMapping("/add")
     public String add(ProductVo productVo) {
 
         this.productService.AddProductVo(productVo);
 
         return "redirect:/product";
     }
+
+
 }

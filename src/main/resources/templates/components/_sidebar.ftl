@@ -19,14 +19,36 @@
                     <#else >
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> 商城首页</a>
                     </#if>
+
+
                 </li>
 
-                <li>
-                    <#if selectItemCode=="m002" >
-                        <a href="javascript:void(0)"><i class="fa fa-dashboard fa-fw"></i> 商品管理</a>
-                    <#else >
-                        <a href="/product"><i class="fa fa-dashboard fa-fw"></i> 商品管理</a>
-                    </#if>
+                <li class="${selectItemCode?startsWith("m002")?string("active","")}">
+                    <a href="javascript:void(0)"><i class="fa fa-dashboard fa-fw"></i> 商品目录 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <#if selectItemCode=="m002-01" >
+                            <li class="active">
+                                <a href="javascript:void(0)"><i class="fa fa-dashboard fa-fw"></i> 商品管理</a>
+                            </li>
+
+                        <#else >
+                            <li>
+                                <a href="/product"><i class="fa fa-dashboard fa-fw"></i> 商品管理</a>
+                            </li>
+                        </#if>
+                        <#if selectItemCode=="m002-02" >
+                            <li class="active">
+                                <a href="javascript:void(0)"><i class="fa fa-dashboard fa-fw"></i> 商品分类管理</a>
+                            </li>
+
+                        <#else >
+                            <li>
+                                <a href="/category"><i class="fa fa-dashboard fa-fw"></i> 商品分类管理</a>
+                            </li>
+                        </#if>
+
+                    </ul>
+
                 </li>
 
                 <li>
