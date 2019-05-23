@@ -14,5 +14,5 @@ public class ProductSku {
     private Integer storeLimitCount;
     private String barCode;
     private Double weight;
-    private int isOnLine;
+    private Boolean isOnLine;
 }

@@ -36,6 +36,10 @@
         SELECT * FROM Nani_Product_Sku WHERE ProductId= #{ProductId,jdbcType=BIGINT}
     </select>
 
+    <select id="selectProductPictureByProductId" resultType="com.aomi.nani.model.domain.ProductPicture" parameterType="java.lang.Long">
+         SELECT * FROM Nani_Product_Sku_Picture WHERE ProductSkuId= #{ProductId,jdbcType=BIGINT}
+    </select>
+
     <insert id="insertProductSku" useGeneratedKeys="true" parameterType="com.aomi.nani.model.domain.ProductSku"
             keyProperty="id">
      INSERT INTO `Nani_Product_Sku`(`ProductId`,`SKUPropertyValueId`,`Price`,`SalePrice`,`CostPrice`,`StoreCount`,`StoreLimitCount`,`Weight`,`IsOnLine`, `BarCode`)
@@ -75,4 +79,10 @@ VALUES
  #{createTime,jdbcType=TIMESTAMP}
 );
     </insert>
+    
+    <insert id="insertProductPicture" parameterType="com.aomi.nani.model.domain.ProductPicture">
+        INSERT INTO `Nani_Product_Sku_Picture`(`ImgName`,`Src`,`IsMain`,`ProductSkuId`)
+        VALUES (#{imgName,jdbcType=VARCHAR}, #{src,jdbcType=VARCHAR},  #{isMain,jdbcType=INTEGER},  #{productSkuId,jdbcType=BIGINT});
+    </insert>
+    
 </mapper>

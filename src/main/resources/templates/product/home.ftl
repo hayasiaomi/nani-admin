@@ -37,7 +37,8 @@
                     <div class="container-fluid ni-container-fluid">
                         <form class="navbar-form navbar-left ni-navbar-form" role="search">
                             <div class="form-group">
-                                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Search" value="${keyword!''}">
+                                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Search"
+                                       value="${keyword!''}">
                             </div>
                             <button type="submit" class="btn btn-default">查找</button>
                         </form>
@@ -50,10 +51,10 @@
                                 <th>商品编号</th>
                                 <th>商品名称</th>
                                 <th>浏览</th>
-                                <th>分类</th>
+                                <th>销售信息</th>
                                 <th>库存数量</th>
-                                <th>价格</th>
-                                <th>状态</th>
+                                <th>是否上架</th>
+                                <th>商品型号</th>
                                 <th>操作 <a class="btn btn-success btn-xs" href="/product/addProduct">增加</a></th>
                             </tr>
                             </thead>
@@ -64,11 +65,22 @@
                                     <tr>
                                         <td>${ productVo.id }</td>
                                         <td>${ productVo.productName!"" }</td>
-                                        <td>${ productVo.pictureUrl!"" }</td>
-                                        <td></td>
-                                        <td>${ productVo.storeCount }</td>
-                                        <td>${ productVo.salePrice}</td>
-                                        <td>${productVo.status}</td>
+                                        <td><img width="16" height="16" src="${ productVo.mainPictureSrc!"" }"></td>
+                                        <td>
+                                            <span class="label label-info">原价：${productVo.price!''}</span>
+                                            <span class="label label-success">现价：${productVo.salePrice!''}</span>
+                                            <span class="label label-primary">成本：${productVo.costPrice!''}</span>
+                                        </td>
+                                        <td>${ productVo.storeCount!'' } ${productVo.unit!''}</td>
+                                        <td>
+                                            <#if productVo.isOnLine!false>
+                                                <span class="label label-success">上架</span>
+                                            <#else >
+                                                <span class="label label-danger">下架</span>
+                                            </#if>
+
+                                        </td>
+                                        <td>${productVo.productCode!''}</td>
                                         <td>
                                             <button type="button" class="btn btn-primary btn-xs">编辑</button>
                                             |
@@ -98,9 +110,11 @@
                                 </li>
                                 <#list 1..pagerVo.totalPage as num>
                                     <#if num == pagerVo.nowPage>
-                                        <li  class="active"><a href="javascript:void(0)">${num}</a></li>
-                                        <#else >
-                                            <li><a href="/product?keywork=${keyword!''}&pageIndex=${num}&pageSize=${pagerVo.pageSize}">${num}</a></li>
+                                        <li class="active"><a href="javascript:void(0)">${num}</a></li>
+                                    <#else >
+                                        <li>
+                                            <a href="/product?keywork=${keyword!''}&pageIndex=${num}&pageSize=${pagerVo.pageSize}">${num}</a>
+                                        </li>
                                     </#if>
 
                                 </#list>

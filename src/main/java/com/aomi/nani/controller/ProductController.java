@@ -30,7 +30,7 @@ public class ProductController {
     @GetMapping(value = {"", "/index"})
     public String index(@RequestParam(value = "keyword", required = false) String keyword,
                         @RequestParam(value = "pageIndex", required = false, defaultValue = "1") int pageIndex,
-                        @RequestParam(value = "pageSize", required = false, defaultValue = "2") int pageSize, Model model) {
+                        @RequestParam(value = "pageSize", required = false, defaultValue = "10") int pageSize, Model model) {
 
       PagerVo<ProductVo> pagerVo = this.productService.findProductsByKeyword(keyword, pageIndex, pageSize);
 

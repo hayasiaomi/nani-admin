@@ -84,9 +84,10 @@
                                                                     </#list>
                                                                 </#if>
                                                             </select>
+                                                            <input id="input-productCategoryId" type="hidden" name="productCategoryId" />
                                                         </div>
                                                         <div class="col-sm-4">
-                                                            <select id="select-second-category"
+                                                            <select id="select-second-category" onchange="changeSecondCategory(this)"
                                                                     class="form-control selectpicker">
                                                                 <option value="-1">第二级分类</option>
 
@@ -159,22 +160,12 @@
                                                 <label for="productName" class="col-sm-2 control-label">商品数量</label>
                                                 <div class="col-sm-4">
                                                     <div class="input-group">
-                                                        <input type="text" id="stock" name="stock" class="form-control">
+                                                        <input type="text" id="storeCount" name="storeCount" class="form-control">
                                                         <span class="input-group-addon">件</span>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="productName" class="col-sm-2 control-label">警报数量</label>
-                                                <div class="col-sm-4">
-                                                    <div class="input-group">
-                                                        <input type="text" name="warningStock" id="warningStock"
-                                                               class="form-control" value="5"/>
-                                                        <span class="input-group-addon">件</span>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="form-group">
                                                 <label for="productName" class="col-sm-2 control-label">商品条码</label>
                                                 <div class="col-sm-4">
@@ -267,6 +258,8 @@
                 // 选中性别
                 var parentId = $(elm).val();
 
+                $("#input-productCategoryId").val(parentId);
+
                 $("#select-second-category").find("option:not(:first)").remove();
 
                 $.ajax({
@@ -285,7 +278,7 @@
                                     var keyName = data['result'][i]['categoryName'];
                                     var keyValue = data['result'][i]['id'];
 
-                                    $("#select-second-category").append(new Option(keyValue, keyName));
+                                    $("#select-second-category").append(new Option(keyName, keyValue));
                                 }
                             }
 
@@ -293,6 +286,10 @@
 
                     }
                 })
+            }
+
+            function changeSecondCategory(elm) {
+                $("#input-productCategoryId").val($(elm).val());
             }
 
             function showImageDialog(elm, opts, options) {
@@ -391,7 +388,7 @@
                     '<em class="close"' +
                     'style="position:absolute; top: 0px; right: -14px;"' +
                     'title="删除这张图片" onclick="deleteMultiImage(this)">×</em>' +
-                    '<input type="hidden" name="mainImageFile" value="' + imgUrl + '" />' +
+                    '<input type="hidden" name="mainPictureSrc" value="' + imgUrl + '" />' +
                     '</div>';
 
                 if (imgName != '' && imgName != null) {
@@ -423,7 +420,7 @@
                         '<em class="close"' +
                         'style="position:absolute; top: 0px; right: -14px;"' +
                         'title="删除这张图片" onclick="deleteMultiImage(this)">×</em>' +
-                        '<input type="hidden" name="subImageFile" value="' + imgUrl + '" />' +
+                        '<input type="hidden" name="subPictureSrcs" value="' + imgUrl + '" />' +
                         '</div> </div>';
 
                     $("#div-sub-images").append(html);

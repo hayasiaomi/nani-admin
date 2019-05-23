@@ -1,5 +1,6 @@
 package com.aomi.nani.mapper;
 
+import com.aomi.nani.model.domain.ProductPicture;
 import com.aomi.nani.model.domain.ProductSku;
 import com.aomi.nani.model.domain.ProductSpu;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,7 +18,11 @@ public interface ProductMapper {
 
     ProductSku selectProductSkuByProductId(Long productId);
 
+    List<ProductPicture> selectProductPictureByProductId(Long productId);
+
     Long insertProductSpu(ProductSpu productSpu);
 
     Long insertProductSku(ProductSku productSku);
+
+    void insertProductPicture(ProductPicture productPicture);
 }
