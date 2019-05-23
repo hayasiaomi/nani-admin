@@ -1,5 +1,5 @@
 <#compress>
-    <#include "components/_start.ftl">
+    <#include "../components/_start.ftl">
     <!DOCTYPE html>
     <html lang="zh">
     <@head></@head>

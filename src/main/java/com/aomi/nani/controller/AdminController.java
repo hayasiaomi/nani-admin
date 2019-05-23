@@ -24,7 +24,8 @@ public class AdminController {
 
     @GetMapping(value = {"", "/index"})
     public String index(Model model) {
-        return "main";
+
+        return "admin/main";
     }
 
     @GetMapping("test")
@@ -42,7 +43,7 @@ public class AdminController {
         if (null != account) {
             return "redirect:/admin";
         }
-        return "login";
+        return "admin/login";
     }
 
     @PostMapping("/auth")

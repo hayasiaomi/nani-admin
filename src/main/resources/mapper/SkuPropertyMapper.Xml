@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aomi.nani.mapper.SkuPropertyMapper">
+
+    <sql id="sqlSkuPropertyByKeyword">
+       WHERE IsDelete = 0
+        <if test="keyword != null and keyword !=''">
+            <bind name="pattern" value="'%' + keyword + '%'"/>
+            AND (PropertyName like #{pattern} OR FrontPropertyName LIKE #{pattern} OR BackPropertyName LIKE #{pattern})
+        </if>
+
+    </sql>
+
+    <select id="selectSkuPropertyById" resultType="com.aomi.nani.model.domain.SkuProperty">
+         SELECT * FROM Nani_Sku_Property WHERE id=#{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectSkuPropertyValueBySkuPropertyId" resultType="com.aomi.nani.model.domain.SkuPropertyValue" parameterType="java.lang.Long">
+         SELECT * FROM Nani_Sku_Property_Value WHERE SkuPropertyId=#{skuPropertyId,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectSkuPropertyCountByKeyword" resultType="java.lang.Integer">
+
+        SELECT Count(Id) FROM Nani_Sku_Property
+
+        <include refid="sqlSkuPropertyByKeyword"></include>
+
+    </select>
+
+    <select id="selectSkuPropertyByKeyword" resultType="com.aomi.nani.model.domain.SkuProperty">
+
+        SELECT * FROM Nani_Sku_Property
+
+        <include refid="sqlSkuPropertyByKeyword"></include>
+
+        LIMIT #{limit,jdbcType=INTEGER},#{skip,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertSkuProperty" parameterType="com.aomi.nani.model.domain.SkuProperty">
+           INSERT INTO `Nani_Sku_Property`(`PropertyName`,`FrontPropertyName`,`BackPropertyName`,`Description`,`Selectable`,`LastUpdateTime`,`CreateTime`)
+      VALUES (#{propertyName,jdbcType=VARCHAR}, #{frontPropertyName,jdbcType=VARCHAR},  #{backPropertyName,jdbcType=VARCHAR},  #{description,jdbcType=VARCHAR}, #{selectable,jdbcType=INTEGER},#{lastUpdateTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP});
+    </insert>
+
+    <insert id="insertSkuPropertyValue" parameterType="com.aomi.nani.model.domain.SkuPropertyValue">
+      INSERT INTO `Nani_Sku_Property_Value`(`SkuPropertyId`,`PropertyValue`)
+      VALUES (#{skuPropertyId,jdbcType=BIGINT}, #{propertyValue,jdbcType=VARCHAR});
+    </insert>
+
+    <update id="updateSkuProperty" parameterType="com.aomi.nani.model.domain.SkuProperty">
+        UPDATE `Nani_Sku_Property` SET  PropertyName=#{propertyName,jdbcType=VARCHAR},FrontPropertyName=#{frontPropertyName,jdbcType=VARCHAR},
+        BackPropertyName=#{backPropertyName,jdbcType=VARCHAR},Description=#{description,jdbcType=VARCHAR},Selectable=#{selectable,jdbcType=INTEGER},
+        LastUpdateTime=#{lastUpdateTime,jdbcType=TIMESTAMP}
+        WHERE id=#{id,jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteSkuPropertyById" parameterType="java.lang.Long">
+        UPDATE `Nani_Sku_Property` SET  IsDelete=1 WHERE id=#{id,jdbcType=BIGINT}
+    </delete>
+
+    <delete id="deleteSkuPropertyValueById" parameterType="java.lang.Long">
+        DELETE FROM Nani_Sku_Property_Value WHERE id=#{id,jdbcType=BIGINT}
+    </delete>
+
+</mapper>
