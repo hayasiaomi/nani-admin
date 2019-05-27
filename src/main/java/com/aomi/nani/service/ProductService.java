@@ -1,11 +1,14 @@
 package com.aomi.nani.service;
 
 import com.aomi.nani.mapper.ProductMapper;
-import com.aomi.nani.model.domain.ProductPicture;
-import com.aomi.nani.model.domain.ProductSku;
-import com.aomi.nani.model.domain.ProductSpu;
+import com.aomi.nani.mapper.ProductSkuPropertyValueMapper;
+import com.aomi.nani.mapper.SkuPropertyMapper;
+import com.aomi.nani.model.domain.*;
+import com.aomi.nani.model.vo.AddAndEditProductVo;
 import com.aomi.nani.model.vo.PagerVo;
 import com.aomi.nani.model.vo.ProductVo;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +25,10 @@ public class ProductService {
 
     @Autowired
     private ProductMapper productMapper;
+    @Autowired
+    private ProductSkuPropertyValueMapper productSkuPropertyValueMapper;
+    @Autowired
+    private SkuPropertyMapper skuPropertyMapper;
 
     public PagerVo<ProductVo> findProductsByKeyword(String keyword, int pageIndex, int pageSize) {
 
@@ -36,7 +43,7 @@ public class ProductService {
 
                 List<ProductPicture> productPictures = this.productMapper.selectProductPictureByProductId(productSku.getId());
 
-                String mainPictureSrc = productPictures.stream().filter( pp ->pp.isMain()).map( pp->pp.getSrc()).findFirst().orElse("");
+                String mainPictureSrc = productPictures.stream().filter(pp -> pp.isMain()).map(pp -> pp.getSrc()).findFirst().orElse("");
 
                 List<String> subPictureSrcs = productPictures.stream().filter(pp -> !pp.isMain()).map(pp -> pp.getSrc()).collect(Collectors.toList());
 
@@ -70,19 +77,19 @@ public class ProductService {
     }
 
     @Transactional
-    public void AddProductVo(ProductVo productVo) {
+    public void AddProductVo(AddAndEditProductVo addAndEditProductVo) {
 
 
         ProductSpu productSpu = new ProductSpu();
 
-        productSpu.setTitle(productVo.getTitle());
-        productSpu.setProductName(productVo.getProductName());
+        productSpu.setTitle(addAndEditProductVo.getTitle());
+        productSpu.setProductName(addAndEditProductVo.getProductName());
         productSpu.setIsDelete(false);
-        productSpu.setDescription(productVo.getDescription());
+        productSpu.setDescription(addAndEditProductVo.getDescription());
         productSpu.setStatus(0);
-        productSpu.setUnit(productVo.getUnit());
+        productSpu.setUnit(addAndEditProductVo.getUnit());
         productSpu.setProductType(1);
-        productSpu.setProductCode(productVo.getProductCode());
+        productSpu.setProductCode(addAndEditProductVo.getProductCode());
 
         productSpu.setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
         productSpu.setLastUpdateTime(Timestamp.valueOf(LocalDateTime.now()));
@@ -91,13 +98,13 @@ public class ProductService {
 
         ProductSku productSku = new ProductSku();
 
-        productSku.setPrice(productVo.getPrice());
+        productSku.setPrice(addAndEditProductVo.getPrice());
         productSku.setProductId(productSpu.getId());
-        productSku.setSalePrice(productVo.getSalePrice());
-        productSku.setCostPrice(productVo.getCostPrice());
-        productSku.setStoreCount(productVo.getStoreCount());
+        productSku.setSalePrice(addAndEditProductVo.getSalePrice());
+        productSku.setCostPrice(addAndEditProductVo.getCostPrice());
+        productSku.setStoreCount(addAndEditProductVo.getStoreCount());
         productSku.setStoreLimitCount(5);
-        productSku.setBarCode(productVo.getBarCode());
+        productSku.setBarCode(addAndEditProductVo.getBarCode());
         productSku.setWeight(0d);
 
         this.productMapper.insertProductSku(productSku);
@@ -105,16 +112,16 @@ public class ProductService {
 
         ProductPicture mainProductPicture = new ProductPicture();
 
-        mainProductPicture.setImgName(new File(productVo.getMainPictureSrc()).getName());
+        mainProductPicture.setImgName(new File(addAndEditProductVo.getMainPictureSrc()).getName());
         mainProductPicture.setMain(true);
-        mainProductPicture.setSrc(productVo.getMainPictureSrc());
+        mainProductPicture.setSrc(addAndEditProductVo.getMainPictureSrc());
         mainProductPicture.setProductSkuId(productSku.getId());
 
         this.productMapper.insertProductPicture(mainProductPicture);
 
-        if (productVo.getSubPictureSrcs() != null && productVo.getSubPictureSrcs().size() > 0) {
+        if (addAndEditProductVo.getSubPictureSrcs() != null && addAndEditProductVo.getSubPictureSrcs().size() > 0) {
 
-            for (String subProductPictureSrc : productVo.getSubPictureSrcs()) {
+            for (String subProductPictureSrc : addAndEditProductVo.getSubPictureSrcs()) {
 
                 ProductPicture subProductPicture = new ProductPicture();
 
@@ -126,6 +133,54 @@ public class ProductService {
                 this.productMapper.insertProductPicture(subProductPicture);
             }
         }
+
+        if (addAndEditProductVo.getSpecNames() != null && addAndEditProductVo.getSpecNames().size() > 0) {
+            List<String> specNames = addAndEditProductVo.getSpecNames();
+            List<String> specValues = addAndEditProductVo.getSpecValues();
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            for (int i = 0; i < specNames.size(); i++) {
+                String specName = specNames.get(i);
+
+                if(specName != null && specName != "")
+                {
+                    String specValue = "";
+                    if (i < specValues.size()) {
+
+                        specValue = specNames.get(i);
+                    }
+
+                    SkuProperty skuProperty = new SkuProperty();
+
+                    skuProperty.setProductSpuId(productSpu.getId());
+                    skuProperty.setPropertyName(specName);
+
+                    List<String> values = new ArrayList<>();
+
+                    values.add(specValue);
+
+                    try {
+                        skuProperty.setPropertyValue(mapper.writeValueAsString(values));
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
+
+                    this.skuPropertyMapper.insertSkuProperty(skuProperty);
+
+                    ProductSkuPropertyValue productSkuPropertyValue = new ProductSkuPropertyValue();
+
+                    productSkuPropertyValue.setProductSpuId(productSpu.getId());
+                    productSkuPropertyValue.setProductSkuId(productSku.getId());
+                    productSkuPropertyValue.setSkuPropertyId(skuProperty.getId());
+                    productSkuPropertyValue.setPropertyValue(specValue);
+
+                    this.productSkuPropertyValueMapper.insertProductSkuPropertyValue(productSkuPropertyValue);
+
+                }
+            }
+        }
+
 
     }
 

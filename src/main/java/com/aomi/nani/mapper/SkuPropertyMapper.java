@@ -23,7 +23,7 @@ public interface SkuPropertyMapper {
 
     void deleteSkuPropertyById(Long id);
 
-    void insertSkuPropertyValue(@Param("skuPropertyId")Long skuPropertyId,@Param("propertyValue") String propertyValue);
+    void insertSkuPropertyValue(  @Param("skuPropertyId")Long skuPropertyId, @Param("propertyValue") String propertyValue);
 
     void deleteSkuPropertyValueById(Long id);
 

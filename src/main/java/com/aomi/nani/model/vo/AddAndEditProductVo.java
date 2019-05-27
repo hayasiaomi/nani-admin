@@ -5,7 +5,8 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ProductVo {
+public class AddAndEditProductVo {
+
     private Long id;
     private String title;
     private String productName;
@@ -25,4 +26,6 @@ public class ProductVo {
     private Boolean isOnLine;
     private String barCode;
     private Boolean isDelete;
+    private List<String> specNames;
+    private  List<String> specValues;
 }

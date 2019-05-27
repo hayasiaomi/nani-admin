@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aomi.nani.mapper.ProductSkuPropertyValueMapper">
+
+    <insert id="insertProductSkuPropertyValue" parameterType="com.aomi.nani.model.domain.ProductSkuPropertyValue" useGeneratedKeys="true"  keyProperty="id">
+           INSERT INTO `Nani_Product_Sku_Property_Value`(`SkuPropertyId`,`ProductSpuId`,`ProductSkuId`,`PropertyValue`,`LastUpdateTime`,`CreateTime`)
+      VALUES (#{skuPropertyId,jdbcType=BIGINT},#{productSpuId,jdbcType=BIGINT}, #{productSkuId,jdbcType=BIGINT},  #{propertyValue,jdbcType=VARCHAR},#{lastUpdateTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP});
+    </insert>
+
+</mapper>

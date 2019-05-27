@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 @Data
 public class SkuPropertyVo {
     private Long id;
+    private Long productSpuId;
     private String propertyName;
     private String frontPropertyName;
     private String backPropertyName;

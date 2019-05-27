@@ -1,5 +1,6 @@
 package com.aomi.nani.controller;
 
+import com.aomi.nani.model.vo.AddAndEditProductVo;
 import com.aomi.nani.model.vo.PagerVo;
 import com.aomi.nani.model.vo.ProductCategoryVo;
 import com.aomi.nani.model.vo.ProductVo;
@@ -51,9 +52,9 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-    public String add(ProductVo productVo) {
+    public String add(AddAndEditProductVo addAndEditProductVo) {
 
-        this.productService.AddProductVo(productVo);
+        this.productService.AddProductVo(addAndEditProductVo);
 
         return "redirect:/product";
     }

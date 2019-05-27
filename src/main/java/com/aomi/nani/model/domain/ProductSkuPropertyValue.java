@@ -5,14 +5,11 @@ import lombok.Data;
 import java.sql.Timestamp;
 
 @Data
-public class SkuProperty {
+public class ProductSkuPropertyValue {
     private Long id;
+    private Long skuPropertyId;
     private Long productSpuId;
-    private String propertyName;
-    private String frontPropertyName;
-    private String backPropertyName;
-    private String description;
-    private Boolean selectable;
+    private Long productSkuId;
     private String propertyValue;
     private Timestamp lastUpdateTime;
     private Timestamp createTime;

@@ -3,7 +3,7 @@
 <mapper namespace="com.aomi.nani.mapper.SkuPropertyMapper">
 
     <sql id="sqlSkuPropertyByKeyword">
-       WHERE IsDelete = 0
+        WHERE IsDelete = 0
         <if test="keyword != null and keyword !=''">
             <bind name="pattern" value="'%' + keyword + '%'"/>
             AND (PropertyName like #{pattern} OR FrontPropertyName LIKE #{pattern} OR BackPropertyName LIKE #{pattern})
@@ -15,7 +15,8 @@
          SELECT * FROM Nani_Sku_Property WHERE id=#{id,jdbcType=BIGINT}
     </select>
 
-    <select id="selectSkuPropertyValueBySkuPropertyId" resultType="com.aomi.nani.model.domain.SkuPropertyValue" parameterType="java.lang.Long">
+    <select id="selectSkuPropertyValueBySkuPropertyId" resultType="com.aomi.nani.model.domain.SkuPropertyValue"
+            parameterType="java.lang.Long">
          SELECT * FROM Nani_Sku_Property_Value WHERE SkuPropertyId=#{skuPropertyId,jdbcType=BIGINT}
     </select>
 
@@ -36,9 +37,9 @@
         LIMIT #{limit,jdbcType=INTEGER},#{skip,jdbcType=INTEGER}
     </select>
 
-    <insert id="insertSkuProperty" parameterType="com.aomi.nani.model.domain.SkuProperty">
-           INSERT INTO `Nani_Sku_Property`(`PropertyName`,`FrontPropertyName`,`BackPropertyName`,`Description`,`Selectable`,`LastUpdateTime`,`CreateTime`)
-      VALUES (#{propertyName,jdbcType=VARCHAR}, #{frontPropertyName,jdbcType=VARCHAR},  #{backPropertyName,jdbcType=VARCHAR},  #{description,jdbcType=VARCHAR}, #{selectable,jdbcType=INTEGER},#{lastUpdateTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP});
+    <insert id="insertSkuProperty" parameterType="com.aomi.nani.model.domain.SkuProperty" useGeneratedKeys="true"  keyProperty="id">
+           INSERT INTO `Nani_Sku_Property`(`ProductSpuId`,`PropertyName`,`FrontPropertyName`,`BackPropertyName`,`PropertyValue`,`Selectable`,`LastUpdateTime`,`CreateTime`)
+      VALUES (#{productSpuId,jdbcType=BIGINT},#{propertyName,jdbcType=VARCHAR}, #{frontPropertyName,jdbcType=VARCHAR},  #{backPropertyName,jdbcType=VARCHAR},  #{propertyValue,jdbcType=VARCHAR}, #{selectable,jdbcType=INTEGER},#{lastUpdateTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP});
     </insert>
 
     <insert id="insertSkuPropertyValue" parameterType="com.aomi.nani.model.domain.SkuPropertyValue">
